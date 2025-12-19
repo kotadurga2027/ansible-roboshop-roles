@@ -1,5 +1,5 @@
 - name: configure the {{component}}
   hosts: "{{component}}"
   become: yes
-  roles:
+  roles: # this will automatically load a foleder called as role in current working or present working directory.
     - "{{component}}"

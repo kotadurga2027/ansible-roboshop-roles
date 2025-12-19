@@ -1,0 +1,14 @@
+- name: copy the catalgue service file
+  ansible.builtin.copy:
+    src: catalogue.service
+    dest: /etc/systemd/system/"{{component}}".service
+
+- name: reload the systemctl demon
+  ansible.builtin.systemd_service:
+    daemon_reload: true
+
+- name: start and ebale the service
+  ansible.builtin.service:
+    name: "{{component}}"
+    state: restarted #even app is not running we can restart
+    enabled: yes
