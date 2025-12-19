@@ -12,3 +12,4 @@
     name: catalogue
     state: restarted #even app is not running we can restart catalogue service
     enabled: yes
+
