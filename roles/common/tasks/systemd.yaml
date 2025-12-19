@@ -10,5 +10,5 @@
 - name: start and ebale the service
   ansible.builtin.service:
     name: catalogue
-    state: restarted #even app is not running we can restart
+    state: restarted #even app is not running we can restart catalogue service
     enabled: yes
