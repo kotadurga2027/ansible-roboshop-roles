@@ -9,11 +9,7 @@
     name: common
     tasks_from: nodejs
 
-- name: systemd setup
-  include_role:
-    name: common
-    tasks_from: systemd
-    
+
 - name: copy the mongodb repo
   ansible.builtin.copy:
     src: mongo.repo
@@ -35,3 +31,9 @@
 - name: load the data
   ansible.builtin.shell: mongosh --host mongodb.kotadurgagangumalla.fun < /app/db/master-data.js
   when: catalogue_output.stdout | int < 0
+
+
+- name: systemd setup
+  include_role:
+    name: common
+    tasks_from: systemd 
