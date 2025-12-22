@@ -1,0 +1,5 @@
+- name: configure the catalogue
+  hosts: catalogue
+  become: yes
+  roles: # this will automatically load a foleder called as role in current working or present working directory.
+    - catalogue
